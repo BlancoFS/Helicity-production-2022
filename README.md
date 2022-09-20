@@ -6,7 +6,7 @@ After running the step 0, you have to check the DAS name that has been generated
 The paths must be changed also for the ones at your workspace.
 
 ```
-**CMSSW_10_2_22 must be used**
+CMSSW_10_2_22 must be used
 ```
 
 
