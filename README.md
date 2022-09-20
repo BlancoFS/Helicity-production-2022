@@ -1,39 +1,14 @@
 # Helicity-production-2022
 Production steps from LHE to nanoAOD for ggF, VBF and WW processes
 
+After running the step 0, you have to check the DAS name that has been generated for the sample, copy it and paste in the configuration file at **config.Data.inputDataset**. The steps are prepared for the WLWL polarization, just change to other WXWX (either TT, LT or TL) to run other samples.
 
-# Samples generation
-
-Generation and post-processing of Legacy polarized samples from madgraph5 to NanoAODSIM
-
-```
-RELEASE = CMSSW_10_2_22
-CONDITIONS = 102X_upgrade2018_realistic_v15
-```
-
-Generation of LHE events with polarized bosons using Madgraph5.
-
-**For WW production (MG > 2.6.X):**
+The paths must be changed also for the ones at your workspace.
 
 ```
-generate p p > w+{0/T} w-{0/T} > (w+ > l+ vl), (w- > l- vl~)
+**CMSSW_10_2_22 must be used**
 ```
 
-**For Higgs production, we use HPO PO model for ggH at LO:**
-
-```
-import model HPOprodMFV_UFO
-generate p p > h, (h > w+{0/T} w-{0/T}, (w+ > l+ vl), (w- > l- vl~))
-```
-
-
-Then, just launch and generate LHE file or create a gridpack (link for gridpack generation at CMS [1](https://twiki.cern.ch/twiki/bin/view/Main/YuanChaoMCprod15)) and run:
-
-```
-./runcmsgrid.sh 10000 $RANDOM 1
-```
-
-# Sample processing
 
 ## GEN-SIM
 
