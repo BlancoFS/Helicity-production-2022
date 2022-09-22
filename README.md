@@ -7,6 +7,10 @@ The paths must be changed also for the ones at your workspace.
 
 ```
 CMSSW_10_2_22 must be used
+
+cd .../CMSSW_10_2_22/src
+cmsenv
+voms-proxy-init --voms cms --valid 168:00
 ```
 
 
