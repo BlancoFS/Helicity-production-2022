@@ -1,0 +1,9 @@
+
+### WW Madgraph_amnlo LO in the Di-bosonic reference frame (Higgs removed from the production) (Tau added and decayed with Tauola, Pythia)
+
+WLWL : 0.5201 +- 0.00035
+WTWT : 4.12 +- 0.003016
+WTWL : 0.6103 +- 0.000504
+WLWT : 1.63 +- 0.00107
+
+units in pb^-1
