@@ -6,6 +6,13 @@ WTWT : 4.12 +- 0.003016
 WTWL : 0.6103 +- 0.000504
 WLWT : 1.63 +- 0.00107
 
+### WW Madgraph_amnlo LO in the Di-bosonic reference frame (Higgs removed from the production) (Tau decay included. Only processes with emu final state)
+
+WLWL : 0.1109 +- 0.0001155
+WTWT : 0.8454 +- 0.001096
+WTWL : 0.1282 +- 0.0001441
+WLWT : 0.3415 +- 0.0003442
+
 ### VBF Higgs Madgraph_amnlo LO in the Di-bosonic reference frame (Higgs removed from the production) (Tau added and decayed with Tauola, Pythia)
 
 WLWL : 0.0002132 +- 1.3e-7
@@ -14,3 +21,4 @@ WTWL : 0.0001133 +- 7.1e-8
 WLWT : 0.0001164 +- 6.938e-08
 
 units in pb^-1
+
