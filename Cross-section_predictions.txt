@@ -20,5 +20,161 @@ WTWT : 0.0005222 +- 4.15e-6
 WTWL : 0.0001133 +- 7.1e-8
 WLWT : 0.0001164 +- 6.938e-08
 
+### VBF Higgs Madgraph_amnlo LO in the Higgs reference frame. Full DF leptonic final state using ME reweight to match polarization states
+
+WLWL : 0.021723171453475052 +- 0.002349581130635324
+WTWT : 0.014206963731006668 +- 0.00200003812552197
+
+### ggF Higgs Madgraph_amnlo LO in the Higgs reference frame using HEFT model. Full DF leptonic final state using ME reweight to match polarization states
+
+WLWL : 0.1464183881554679 +- 0.01970701807249926
+WTWT : 0.0949010065885438 +- 0.018873198996799522
+
 units in pb^-1
+
+
+#####
+##### Madgraph commands
+#####
+
+
+### WW Polarized commands for madgraph generation
+
+generate p p > w+{0} w-{0} $$ h, (w+ > mu+ vm), (w- > e- ve~)
+add process p p > w+{0} w-{0} $$ h, (w+ > e+ ve), (w- > mu- vm~)
+add process p p > w+{0} w-{0} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)
+add process p p > w+{0} w-{0} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{0} w-{0} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)
+add process p p > w+{0} w-{0} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)
+add process p p > w+{0} w-{0} $$ h, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{0} w-{0} $$ h, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)
+
+generate p p > w+{T} w-{T} $$ h, (w+ > mu+ vm), (w- > e- ve~)
+add process p p > w+{T} w-{T} $$ h, (w+ > e+ ve), (w- > mu- vm~)
+add process p p > w+{T} w-{T} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)
+add process p p > w+{T} w-{T} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{T} w-{T} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)
+add process p p > w+{T} w-{T} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)
+add process p p > w+{T} w-{T} $$ h, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{T} w-{T} $$ h, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)
+
+generate p p > w+{T} w-{0} $$ h, (w+ > mu+ vm), (w- > e- ve~)
+add process p p > w+{T} w-{0} $$ h, (w+ > e+ ve), (w- > mu- vm~)
+add process p p > w+{T} w-{0} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)
+add process p p > w+{T} w-{0} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{T} w-{0} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)
+add process p p > w+{T} w-{0} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)
+add process p p > w+{T} w-{0} $$ h, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{T} w-{0} $$ h, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)
+
+generate p p > w+{0} w-{T} $$ h, (w+ > mu+ vm), (w- > e- ve~)
+add process p p > w+{0} w-{T} $$ h, (w+ > e+ ve), (w- > mu- vm~)
+add process p p > w+{0} w-{T} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)
+add process p p > w+{0} w-{T} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{0} w-{T} $$ h, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)
+add process p p > w+{0} w-{T} $$ h, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)
+add process p p > w+{0} w-{T} $$ h, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)
+add process p p > w+{0} w-{T} $$ h, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)
+
+### ggH Polarized production in madgraph
+
+import model heft
+
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+generate p p > h, (h > w+ w- > l+ vl l- vl~)    ## Alternative inclusive samples 
+
+generate p p > h, (h > w+ w- > mu+ vm e- ve~)
+add process p p > h, (h > w+ w- > e+ ve mu- vm~)
+add process p p > h, (h > w+ w- > ta+ vt ta- vt~, (ta+ > mu+ vm vt~), (ta- > e- ve~ vt))
+add process p p > h, (h > w+ w- > ta+ vt ta- vt~, (ta+ > e+ ve vt~), (ta- > mu- vm~ vt))
+add process p p > h, (h > w+ w- > ta+ vt mu- vm~, (ta+ > e+ ve vt~))
+add process p p > h, (h > w+ w- > ta+ vt e- ve~, (ta+ > mu+ vm vt~))
+add process p p > h, (h > w+ w- > e+ ve ta- vt~, (ta- > mu- vm~ vt))
+add process p p > h, (h > w+ w- > mu+ vm ta- vt~, (ta- > e- ve~ vt))
+
+
+REWEIGHT
+
+change use_eventid True
+change helicity True
+change allow_missing_finalstate False
+change boost lambda p: p.pid in [25]
+change process p p > h, (h > w+{0} w-{0}, (w+ > mu+ vm), (w- > e- ve~))
+change process p p > h, (h > w+{0} w-{0}, (w+ > e+ ve), (w- > mu- vm~)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h, (h > w+{0} w-{0}, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+launch --rwgt_name=hww_me_rw
+
+
+change use_eventid True
+change helicity True
+change allow_missing_finalstate False
+change boost lambda p: p.pid in [25]
+change process p p > h, (h > w+{T} w-{T}, (w+ > mu+ vm), (w- > e- ve~))
+change process p p > h, (h > w+{T} w-{T}, (w+ > e+ ve), (w- > mu- vm~)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h, (h > w+{T} w-{T}, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+launch --rwgt_name=hww_me_rw
+
+
+
+### VBF Higgs polarization madgraph
+
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
+generate p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > l+ vl l- vl~)   ### Alternative inclusive 
+
+generate p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > mu+ vm e- ve~)
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > e+ ve mu- vm~)
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > ta+ vt ta- vt~, (ta+ > mu+ vm vt~), (ta- > e- ve~ vt))
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > ta+ vt ta- vt~, (ta+ > e+ ve vt~), (ta- > mu- vm~ vt))
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > ta+ vt mu- vm~, (ta+ > e+ ve vt~))
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > ta+ vt e- ve~, (ta+ > mu+ vm vt~))
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > e+ ve ta- vt~, (ta- > mu- vm~ vt))
+add process p p > h j j $$ a z w+ w- QCD=0, (h > w+ w- > mu+ vm ta- vt~, (ta- > e- ve~ vt))
+
+
+REWEIGHT
+
+change use_eventid True
+change helicity True
+change allow_missing_finalstate False
+change boost lambda p: p.pid in [25]
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > mu+ vm), (w- > e- ve~))
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > e+ ve), (w- > mu- vm~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{0} w-{0}, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+launch --rwgt_name=hww_me_rw
+
+
+change use_eventid True
+change helicity True
+change allow_missing_finalstate False
+change boost lambda p: p.pid in [25]
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > mu+ vm), (w- > e- ve~))
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > e+ ve), (w- > mu- vm~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > e+ ve vt~), (w- > mu- vm~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > ta+ vt, ta+ > mu+ vm vt~), (w- > e- ve~)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > e+ ve), (w- > ta- vt~, ta- > mu- vm~ vt)) --add
+change process p p > h j j $$ a z w+ w- QCD=0, (h > w+{T} w-{T}, (w+ > mu+ vm), (w- > ta- vt~, ta- > e- ve~ vt)) --add
+launch --rwgt_name=hww_me_rw
+
+
+
+
 
