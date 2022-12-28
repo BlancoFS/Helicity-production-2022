@@ -18,7 +18,7 @@ voms-proxy-init --voms cms --valid 168:00
 
 First, if you want to create a ROOT file from **LHE** one:
 
-**UL Recipie**
+**UL recipie first**
 ```
 cmsDriver.py Configuration/GenProduction/python/EXO-RunIIFall18wmLHEGS-05557-fragment.py --python_filename /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/NANOAOD_POL/CMSSW_10_6_19/src/Fastsim/OSWW_LL_WWTo2l2v-RunIIFall18wmLHEGS-00001_cfg.py --no_exec --mc --eventcontent RAWSIM --datatier GEN-SIM --conditions 106X_upgrade2018_realistic_v4 --beamspot Realistic25ns13TeVEarly2018Collision --step GEN,SIM --geometry DB:Extended --era Run2_2018 --filein file:WLWLTo2L2Nu_LO_Madgraph5_amnlo.lhe --fileout file:WLWLTo2L2Nu_LO_Madgraph5_amnlo_step1.root --nThreads 1 -n 500000
 ```
@@ -40,7 +40,7 @@ crab submit -c ggF_WLWL_cfg_step0.py
 
 Add HLT and PU from Neutrino_E-10_gun:
 
-**UL Recipie**
+**UL recipie first**
 ```
 cmsDriver.py step1 --mc --eventcontent PREMIXRAW --runUnscheduled --datatier GEN-SIM-DIGI --conditions 106X_upgrade2018_realistic_v11_L1v1 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --nThreads 1 --geometry DB:Extended --datamix PreMix --era Run2_2018  --filein file:WLWLTo2L2Nu_LO_Madgraph5_amnlo_step1.root --fileout file:WLWLTo2L2Nu_LO_Madgraph5_amnlo_step1.root --no_exec --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL18_106X_upgrade2018_realistic_v11_L1v1-v2/PREMIX" --python_filename /afs/cern.ch/work/s/sblancof/private/POLARIZED_SAMPLES/NANOAOD_POL/CMSSW_10_6_19/src/Fastsim/OSWW_LL_WWTo2l2v-RunIIFall18DRPremix-00001_cfg.py -n 500000
 ```
